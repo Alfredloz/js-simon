@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#timer {
+    margin: auto;
+    border: 1px solid black;
+    width: 30vw;
+    height: 30vh;
+    font-size: 100px;
+    text-align: center;
+
+}
+#random_numbers {
+    margin: auto;
+    display: block;
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 5rem;
+}
