@@ -19,7 +19,7 @@ var timer = setInterval(function(){
     document.getElementById('timer').innerHTML = seconds;
     document.getElementById('random_numbers').innerHTML = arrayNumb;
     if (seconds === 0) {
-        alert('stop intervallo');
+        alert('⏰⏰TEMPO SCADUTO⏰⏰');
         clearInterval(timer);
         $('#random_numbers').hide();
         //3) *********richiesta numeri utente************
@@ -28,13 +28,17 @@ var timer = setInterval(function(){
         for (let i = 0; i < 5; i++) {
             userArrayNumbers.push(Number(prompt('inserisci i numeri che hai visualizzato!')));         
         }
-        alert('i numeri del bot erano '+ ''+arrayNumb + ',' + ' invece i tuoi numeri erano ' +'' + userArrayNumbers )
+        alert('i numeri del bot erano '+ ''+arrayNumb + '.' + ' Invece i tuoi numeri sono: ' +'' + userArrayNumbers )
        }, 1000);
+    } else if (seconds <= 9) {
+        $('#timer').css({
+            'color': 'red',
+            'font-size': '150px'
+        });
+        seconds--;
     } else {
         seconds--;
     }
 }, 1000);
-
-
 
 });
