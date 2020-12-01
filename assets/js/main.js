@@ -1,10 +1,8 @@
 //1) Un alert espone 5 numeri casuali diversi.
 //2) dopo 30 secondi l'utente deve inserire, un prompt alla volta, i numeri che ha vito precedentemente.
 //3) una volta insriti i 5 numeri, software dice quanti e quali sono i numeri ricordati.
-
+//!documentready
 $(function(){
-//creazioni variabili
-var boxNumbers = $('#random_ numbers');
 //1)
 //benvenuto al gioco
 alert('Benvenuto al gioco della memoria: vedrai per 30 secondi un messaggio con 5 numeri diversi. Memorizzali e scrivili nella console. Vediamo se te li ricorderai tutti. RICORDA: i numeri sono da 1 a 5000 e sono separati dalla VIRGOLA! Buona fortuna!🍀🍀🍀🍀🍀🍀🍀')
@@ -23,11 +21,20 @@ var timer = setInterval(function(){
     if (seconds === 0) {
         alert('stop intervallo');
         clearInterval(timer);
-        boxNumbers.hide();
+        $('#random_numbers').hide();
+        //3) *********richiesta numeri utente************
+       setTimeout(function(){
+        var userArrayNumbers = [];
+        for (let i = 0; i < 5; i++) {
+            userArrayNumbers.push(Number(prompt('inserisci i numeri che hai visualizzato!')));         
+        }
+        alert('i numeri del bot erano '+ ''+arrayNumb + ',' + ' invece i tuoi numeri erano ' +'' + userArrayNumbers )
+       }, 1000);
     } else {
         seconds--;
     }
-}, 500);
+}, 1000);
 
-//3)
+
+
 });
